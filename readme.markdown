@@ -72,9 +72,9 @@ Apologies about that long table of contents, and here we go.
 - `var {foo: baz} = pony` is equivalent to `var baz = pony.foo`
 - You can provide default values, `var {foo='bar'} = baz` yields `foo: 'bar'` if `baz.foo` is `undefined`
 - You can pull as many properties as you like, aliased or not
-  - `var {foo, bar: baz} = {foo: 0, bar: 1}` gets you `foo: 0` and `baz: 1`
-- You can go deeper. `var {foo: {bar}} = { foo: { bar: 'baz' } }` gets you `bar: 'baz'`
-- You can alias that too. `var {foo: {bar: deep}} = { foo: { bar: 'baz' } }` gets you `deep: 'baz'`
+  - `var {foo, bar: baz} = {foo: 0, bar: 1}` is equivalent to `var foo = 0` and `var baz = 1`
+- You can go deeper. `var {foo: {bar}} = { foo: { bar: 'baz' } }` is equivalent to `var bar = 'baz'`
+- You can alias that too. `var {foo: {bar: deep}} = { foo: { bar: 'baz' } }` is equivalent to `var deep = 'baz'`
 - Properties that aren't found yield `undefined` as usual, e.g: `var {foo} = {}`
 - Deeply nested properties that aren't found yield an error, e.g: `var {foo: {bar}} = {}`
 - It also works for arrays, `var [a, b] = [0, 1]` yields `a: 0` and `b: 1`
