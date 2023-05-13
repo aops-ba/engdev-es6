@@ -196,9 +196,11 @@ Apologies about that long table of contents, and here we go.
 # Symbols
 
 - A new primitive type in ES6
+  - Object keys may now be either symbols or strings
 - You can create your own symbols using `var symbol = Symbol()`
 - You can add a description for debugging purposes, like `Symbol('ponyfoo')`
 - Symbols are immutable and unique. `Symbol()`, `Symbol()`, `Symbol('foo')` and `Symbol('foo')` are all different
+  - This helps prevent name collisions, e.g. to separate public and internal properties
 - Symbols are of type `symbol`, thus: `typeof Symbol() === 'symbol'`
 - You can also create global symbols with `Symbol.for(key)`
   - If a symbol with the provided `key` already existed, you get that one back
